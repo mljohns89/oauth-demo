@@ -1,0 +1,4 @@
+application-local.yml
+.metadata/
+.recommenders/
+bin/
