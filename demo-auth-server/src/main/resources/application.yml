@@ -1,10 +1,7 @@
 security:
   oauth2:
-    client:
-      clientId: acme
-      clientSecret: acmesecret
-      scope: read,write
-      auto-approve-scopes: '.*'
+    resource: 
+      id: oauth2_id
       
 facebook:      
   client: 
