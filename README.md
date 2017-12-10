@@ -1,29 +1,29 @@
-#Spring Boot OAuth2 Demo
+# Spring Boot OAuth2 Demo
 
 A Proof of Concept project that uses Spring Boot and OAuth2 to demonstrate the Authorization Code Grant Flow.
 
 
-##Usage
+## Usage
 
-###Overview
+### Overview
 This Project has three components:
 1. demo-auth-server
 2. demo-client-ui
 3. demo-resource-api
 
-###demo-auth-server
+### demo-auth-server
 This is our Authorization Server.  It has a couple of in memory users (user and admin).  It produces Access Tokens in the form of a JWT.
 Their credentials:
 1. user: pass
 2. admin: adminpass
 
-###demo-client-ui
+### demo-client-ui
 This is our Web App.  It serves as the front end for our Authorization Code Grant Flow.  It uses OAuth2Sso to authenticate with our Authorization Server and gain an access token.
 
-###demo-resource-api
+### demo-resource-api
 This is our Resource Server (Protected Api).  This is the api we want to access with our access token.  Currently, the api only has one endpoint (/api/test) which prints a simple string.  But to access this endpoint, we need a valid access token.
 
-###Flow
+### Flow
 1. Start all three Spring Boot apps
 2. Open a browser and go to "localhost:9999/ui"
 3. You will be automatically redirected to the Auth Server to authenticate.
