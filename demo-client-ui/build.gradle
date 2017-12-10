@@ -25,5 +25,15 @@ repositories {
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
+	
+	compile('org.springframework.boot:spring-boot-starter-security')
+	compile('org.springframework.security.oauth:spring-security-oauth2')
+	
+	compile('org.springframework.cloud:spring-cloud-starter-oauth2')
+	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+	compile('org.thymeleaf.extras:thymeleaf-extras-springsecurity4')
+	
+	compile('com.mashape.unirest:unirest-java:1.4.9')
+	
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }

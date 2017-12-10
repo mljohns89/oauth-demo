@@ -1,23 +1,8 @@
+server: 
+  port: 8080
+#  contextPath: /auth
+
 security:
   oauth2:
-    client:
-      clientId: acme
-      clientSecret: acmesecret
-      scope: read,write
-      auto-approve-scopes: '.*'
-      
-facebook:      
-  client: 
-    clientId: changeme
-    clientSecret: changeme
-    accessTokenUri: https://graph.facebook.com/oauth/access_token
-    userAuthorizationUri: https://www.facebook.com/dialog/oauth
-    tokenName: oauth_token
-    authenticationScheme: query
-    clientAuthenticationScheme: form
-  resource: 
-    userInfoUri: https://graph.facebook.com/me
-    
-some: 
-  test: 
-    property: helloMike
+    resource: 
+      id: oauth2_id
