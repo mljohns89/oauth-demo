@@ -14,12 +14,5 @@ security:
       clientSecret: secret
       accessTokenUri: http://localhost:8080/oauth/token
       userAuthorizationUri: http://localhost:8080/oauth/authorize
-#      registeredRedirectUri: http://localhost:9999/ui/login #completely useless?
-      preEstablishedRedirectUri: http://localhost:9999/ui/auth/confirmAccess
-      useCurrentUri: true
     resource: 
       userInfoUri: http://localhost:8080/user
-      
-#logging: 
-#  level: 
-#    root: DEBUG

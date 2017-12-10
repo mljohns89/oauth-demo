@@ -6,19 +6,3 @@ security:
   oauth2:
     resource: 
       id: oauth2_id
-      
-facebook:      
-  client: 
-    clientId: changeme
-    clientSecret: changeme
-    accessTokenUri: https://graph.facebook.com/oauth/access_token
-    userAuthorizationUri: https://www.facebook.com/dialog/oauth
-    tokenName: oauth_token
-    authenticationScheme: query
-    clientAuthenticationScheme: form
-  resource: 
-    userInfoUri: https://graph.facebook.com/me
-    
-some: 
-  test: 
-    property: helloMike
