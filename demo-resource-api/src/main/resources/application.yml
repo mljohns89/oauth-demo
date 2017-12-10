@@ -1,0 +1,7 @@
+server: 
+  port: 7000
+  
+security: 
+  oauth2: 
+    resource: 
+      id: oauth2_id

@@ -1,10 +1,12 @@
 package com.demo.authserver.controller;
 
 import java.security.Principal;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.JsonNode;
@@ -22,15 +24,8 @@ public class HomeController {
 		return principal;
 	}
 	@GetMapping("/test")
-	public String test() throws UnirestException {
+	public String test(@RequestParam String code, @RequestParam(required=false) Optional<String> state){
 		
-		HttpResponse<JsonNode> jsonResponse = Unirest.post("http://httpbin.org/post")
-				  .header("accept", "application/json")
-				  .queryString("apiKey", "123")
-				  .field("parameter", "value")
-				  .field("foo", "bar")
-				  .asJson();
-		
-		return testProperty;
+		return "Code:  " + code + ".  State:  " + state.orElse("not present.");
 	}
 }

@@ -49,6 +49,8 @@ public class AuthorizationConfig extends AuthorizationServerConfigurerAdapter {
         defaultTokenServices.setTokenStore(tokenStore());
         defaultTokenServices.setSupportRefreshToken(true);
         defaultTokenServices.setTokenEnhancer(accessTokenConverter());
+        defaultTokenServices.setAccessTokenValiditySeconds(accessTokenValiditySeconds);
+        defaultTokenServices.setRefreshTokenValiditySeconds(refreshTokenValiditySeconds);
         return defaultTokenServices;
     }
     @Override
@@ -72,12 +74,13 @@ public class AuthorizationConfig extends AuthorizationServerConfigurerAdapter {
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.inMemory()
                 .withClient("trusted-app")
-                    .authorizedGrantTypes("client_credentials", "password", "refresh_token", "authorization_code")
+                    .authorizedGrantTypes("client_credentials", "password", "refresh_token", "authorization_code", "implicit")
                     .authorities("ROLE_TRUSTED_CLIENT")
                     .scopes("read", "write", "openid")
                     .resourceIds(resourceId)
                     .accessTokenValiditySeconds(accessTokenValiditySeconds)
                     .refreshTokenValiditySeconds(refreshTokenValiditySeconds)
-                    .secret("secret");
+                    .secret("secret")
+                    .autoApprove(true);
     }
 }
